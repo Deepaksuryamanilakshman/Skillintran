@@ -4,34 +4,37 @@ import logo from '../assets/brandlogo.png';
 import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
-  const navigate = useNavigate(); // useNavigate hook
+  const navigate = useNavigate();
 
   const goToLogin = () => {
-    navigate("/authentication"); // navigate to AuthPage
+    navigate("/authentication");
   };
 
   const goToPay = () => {
-    navigate("/authentication"); // example: use same AuthPage for payment/login flow
+    navigate("/authentication");
+  };
+
+  const goToAvailableInternships = () => {
+    navigate("/availableinterships"); // New navigation to Available Internships Page
   };
 
   return (
     <div className="site-root">
-      {/* Navbar */}
       <header className="nav">
         <div className="container nav-inner">
           <div className="logo-container">
             <img src={logo} alt="Skillintarn Logo" className="logo-img" />
           </div>
           <nav className="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <a style={{cursor:"pointer"}} onClick={goToLogin}>Login</a>
-          </nav>
+                    <a style={{ cursor: 'pointer' }} onClick={() => navigate("/")}>Home</a>
+                    <a style={{ cursor: 'pointer' }} onClick={() => navigate("/about")}>About</a>
+                    <a style={{ cursor: 'pointer' }} onClick={() => navigate("/contact")}>Contact</a>
+                    <a style={{cursor:"pointer"}} onClick={goToAvailableInternships}>Internships</a> {/* Added Navigation */}
+                    <a style={{cursor:"pointer"}} onClick={goToLogin}>Login</a>
+                  </nav>
         </div>
       </header>
 
-      {/* Main content */}
       <main>
         {/* Hero Section */}
         <section className="hero" id="home">
@@ -50,13 +53,10 @@ export default function HomePage() {
               </div>
 
               <ul className="trust-list">
-                <li>✔️ Verified certificate</li>
-                <li>✔️ Easy task-based learning</li>
+                 <li>✔️ Easy task-based learning ✔️ Verified certificate</li>
                 <li>✔️ Lifetime access to your certificate</li>
               </ul>
             </div>
-
-       
           </div>
         </section>
 
@@ -91,7 +91,7 @@ export default function HomePage() {
               <p>HTML • CSS • JavaScript • React — 4 weeks</p>
               <div className="card-footer">
                 <div className="card-fee">₹100</div>
-                <button className="btn small" onClick={goToPay}>Join</button>
+                <button className="btn small" onClick={goToAvailableInternships}>Join</button> {/* Updated to navigate */}
               </div>
             </article>
 
@@ -100,7 +100,7 @@ export default function HomePage() {
               <p>Design fundamentals, wireframing, prototyping — 3 weeks</p>
               <div className="card-footer">
                 <div className="card-fee">₹100</div>
-                <button className="btn small" onClick={goToPay}>Join</button>
+                <button className="btn small" onClick={goToAvailableInternships}>Join</button>
               </div>
             </article>
 
@@ -109,7 +109,7 @@ export default function HomePage() {
               <p>Node.js, Express, MongoDB — 4 weeks</p>
               <div className="card-footer">
                 <div className="card-fee">₹100</div>
-                <button className="btn small" onClick={goToPay}>Join</button>
+                <button className="btn small" onClick={goToAvailableInternships}>Join</button>
               </div>
             </article>
           </div>
@@ -123,7 +123,7 @@ export default function HomePage() {
               <p>Join an internship now and add a verified certificate to your resume.</p>
             </div>
             <div>
-              <button className="btn primary large" onClick={goToPay}>Join Now — ₹100</button>
+              <button className="btn primary large" onClick={goToAvailableInternships}>Join Now — ₹100</button>
             </div>
           </div>
         </section>
