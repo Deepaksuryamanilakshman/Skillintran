@@ -1,0 +1,120 @@
+
+:root{
+  --bg: #ffffff;
+  --muted: #6b7280;
+  --accent: #0ea5a3; /* teal-ish */
+  --primary: #0b6e8a; /* deep teal */
+  --card: #f8fafc;
+  --shadow: rgba(24, 24, 27, 0.06);
+  --radius: 12px;
+}
+
+*{box-sizing:border-box}
+body,html,#root{height:100%}
+body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:#111827}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* NAV */
+.nav {
+  background: rgba(248, 247, 247, 0.7); /* slightly more transparent for blur */
+  padding: 18px 0;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(10px); /* adds blur effect */
+  -webkit-backdrop-filter: blur(10px); /* for Safari support */
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:700;font-size:20px}
+.logo .accent{color:var(--accent);margin-left:6px}
+.nav-links a{margin-left:18px;text-decoration:none;color:var(--muted)}
+.nav-links a.btn.small{margin-left:10px}
+
+/* HERO */
+.hero{padding:56px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 0px;gap:32px;align-items:center}
+.hero-title{font-size:32px;line-height:1.08;margin:0 0 12px}
+.hero-sub{color:var(--muted);margin:0 0 20px}
+.hero-cta{display:flex;gap:12px;margin-bottom:18px;justify-content: center; margin: 50px 0;}
+.trust-list{list-style:none;padding:0;margin:0;color:var(--muted)}
+
+/* mock card */
+.mock-card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px var(--shadow)}
+.mock-header{display:flex;gap:12px;align-items:center}
+.mock-avatar{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#d1fae5,#c7f9ff)}
+.mock-title{font-weight:600}
+.mock-meta{font-size:13px;color:var(--muted)}
+.mock-body{margin-top:12px}
+.progress-bar{background:#e6eef0;border-radius:999px;height:8px;overflow:hidden}
+.progress{height:8px;background:linear-gradient(90deg,var(--accent),var(--primary));border-radius:999px}
+.mock-actions{display:flex;gap:8px;margin-top:12px}
+
+/* STEPS */
+.how{padding:40px 0}
+.section-title{font-size:20px;margin-bottom:18px}
+.steps-grid{display:flex;gap:18px}
+.step{background:#fff;border:1px solid #eef2f7;padding:18px;border-radius:10px;flex:1;text-align:center}
+.step-number{width:44px;height:44px;border-radius:44px;background:#eef6f6;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--primary)}
+
+/* CARDS */
+.features{padding:36px 0}
+.cards{display:flex;gap:16px}
+.card{background:#fff;border-radius:10px;padding:18px;flex:1;box-shadow:0 6px 18px var(--shadow);display:flex;flex-direction:column;justify-content:space-between}
+.card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
+.card-fee{font-weight:700}
+
+/* CTA banner */
+.cta-banner{background:linear-gradient(90deg,#f8fafc,#f1fbfb);padding:22px 0;border-top:1px solid #eef6f6}
+.cta-inner{display:flex;align-items:center;justify-content:space-between}
+
+/* FOOTER */
+.footer{padding:20px 0;border-top:1px solid #eef2f7;margin-top:40px}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;color:var(--muted)}
+.footer-links a{margin-left:12px}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:10px;padding:10px 14px;text-decoration:none}
+.btn.small{padding:8px 10px;font-size:14px}
+.btn.primary{background:var(--primary);color:white}
+.btn.ghost{border:1px solid #e6eef0}
+.btn.large{padding:12px 20px;font-weight:600}
+
+/* RESPONSIVE */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-right{order:-1}
+  .cards{flex-direction:column}
+  .steps-grid{flex-direction:column}
+  .cta-inner{flex-direction:column;gap:12px}
+  .nav-links{display:none}
+}
+
+@media (max-width:480px){
+  .hero-title{font-size:22px}
+  .container{padding:0 14px}
+}
+
+/* small accessibility focus state */
+a:focus{outline:3px solid rgba(11,110,138,0.12);outline-offset:3px}
+
+/* end of CSS */
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between image and text */
+}
+
+.logo-img {
+  width: 140px; /* adjust size as needed */
+  height: 40px;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.accent {
+  color: #ff5722; /* example accent color */
+}
