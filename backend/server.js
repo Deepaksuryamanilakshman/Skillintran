@@ -2,8 +2,9 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
-// import authRoutes from "./routes/authRoutes.js";
+import UserauthRoutes from "./routes/userauthRoutes.js";
 import internshipRoutes from "./routes/internshipRoutes.js";
+import infointernship from "./routes/intershipinfo.js";
 // import taskRoutes from "./routes/taskRoutes.js";
 // import paymentRoutes from "./routes/paymentRoutes.js";
 // import certificateRoutes from "./routes/certificateRoutes.js";
@@ -15,8 +16,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
+
+app.use("/api", infointernship);
+
 // Routes
-// app.use("/api/auth", authRoutes);
+app.use("/api/auth", UserauthRoutes);
 app.use("/api/internships", internshipRoutes);
 // app.use("/api/tasks", taskRoutes);
 // app.use("/api/payments", paymentRoutes);

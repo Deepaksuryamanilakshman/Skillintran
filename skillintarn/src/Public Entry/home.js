@@ -7,11 +7,11 @@ export default function HomePage() {
   const navigate = useNavigate();
 
   const goToLogin = () => {
-    navigate("/authentication");
+    navigate("/login");
   };
 
   const goToPay = () => {
-    navigate("/authentication");
+    navigate("/login");
   };
 
   const goToAvailableInternships = () => {
